@@ -9,10 +9,9 @@ public class TesteVeiculo {
 	Veiculo objeto = new Veiculo();
 	
 	objeto.preencherModelo("camaro");
-	System.out.println(objeto.retornarModelo());
-	
 	objeto.preencherBasico(30000.50f, (short)2013);
-	System.out.println("Dados do veículo: "+objeto.retornarTudo());
+	
+	System.out.println("Dados do veículo: \n "+objeto.retornarTudo());
 	
 	System.out.println("Valor com desconto: "+objeto.retornarDesconto());
 	

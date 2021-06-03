@@ -19,7 +19,7 @@ public class Veiculo {
 	public String ligar() {
 		status = true;
 		velocidadeAtual=0;
-		return "Veículo ligado" + velocidadeAtual;
+		return "Veículo ligado" ;
 	}
 	
 	public String desligar() {
@@ -40,24 +40,34 @@ public class Veiculo {
 	}
 	
 	public String retornarTudo() {
-		return modelo + " "+valor+ " "+ ano + " " +velocidadeAtual;
+		return "Modelo " + modelo + " Valor "+valor+ "\n Ano "+ ano +"\n Ligado " +status+ " \n Velocidade " +velocidadeAtual ;
 		
 	}
 	
 	public float retornarDesconto() {
-		return valor;
+		return valor -= valor*0.05;
 	}
 	
 	public void acelerar() {
+		if (status ==true) {
 		velocidadeAtual +=10;
+		}
 	}
 	
 	public void acelerar(int velocidade) {
+		if(status == true) {
 		velocidadeAtual += velocidade;
+		}
 	}
 	
 	public void desacelerar(short velocidade) {
-		velocidadeAtual -= velocidade;
+		if(status==true) {
+			short resultado = (short) (velocidadeAtual-velocidade);
+			if(resultado>=0) {
+			velocidadeAtual -= velocidade;
+			}
+		}
+		
 	}
 	
 	
